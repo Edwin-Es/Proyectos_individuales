@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
+
+body{
+    margin:0;
+    padding: 0;
+    font-family: 'Laila', sans-serif;
+}
+
+nav>ul{
+    list-style: none;
+    display: inline;
+    display: flex;
+    gap: 2rem;
+    font-size: 1.5rem;
+    margin:0;
+    padding: 0.5rem
+}
+nav{
+    position: relative;
+    display: grid;
+    justify-content: end;
+    align-items: center;
+    padding-right: 5rem;
+    border-bottom: 1px solid #000;
+    height: 5rem;
+    overflow: hidden;
+}
+
+
+.cart{
+    position: relative;
+}
+#cart1{
+    text-indent: 25%;
+    width: 1.3rem;
+    height: 1.3rem;
+    position: absolute;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background-color: red;
+    color: #e9e6e6;
+    border-radius: 50%;
+    top: -5px;
+    right: -12px;
+}
+nav>img{
+    position: absolute;
+    margin:0 0 0 3rem;
+    top: -30px;
+    left:0;
+    height:8rem;
+    z-index: -1;
+}
+nav>ul>li{
+    padding: 0.5rem 1rem ;
+    border-radius: 5px;
+    margin:0;
+}
+nav>ul>li:hover{
+    background-color: #dfdddd;
+    cursor: pointer;
+    
+}
+
+h1{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.container{
+    display: flex;
+    padding: 5rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+.producto{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    overflow: hidden;
+    padding: 0 2rem;
+    margin: 0 0 5rem 0
+}
+
+.producto>img{
+    width:50%;
+    size-adjust: contain;
+    align-self: center;
+}
+
+.precio>p{
+    display: inline;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.precio{
+    margin-top: 1rem;
+    align-self: center;
+}
+
+.producto>p{
+    padding: 0.5rem 1rem 0 1rem;
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+    color: #222222;
+}
+
+.producto>.radio{
+    align-self: center;
+    padding: 0.5rem;
+    font-weight: 400;
+}
+
+.producto>button{
+    width: 60%;
+    align-self: center;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    background-color: rgb(143, 44, 49);
+    color:#fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+}
+
