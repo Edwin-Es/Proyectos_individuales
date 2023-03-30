@@ -65,22 +65,33 @@ let productos=[
     },
 ]
 let html="";
-
+let contador=0;
 productos.forEach(product=>{
-    html=html+`<div class="producto"> <img src="${product.img}"/><div class="precio"><p>${product.nombre} </p><p id="precio" name="otra">${product.precio}</p></div><p>${product.descripcion}</p><div class="radio"><input type="radio"  name="talla${product.id}"><label>S</label><input type="radio" name="talla${product.id}"><label>M</label><input type="radio"  name="talla${product.id}" ><label>L</label> </div><button class="${product.id}"type="button" id="id" onclick="add()">Agregar al carrito <i class="bi bi-cart4"></i></button> </div>`;
+    html=html+`<div class="producto"> <img src="${product.img}"/><div class="precio"><p>${product.nombre} </p><p id="precio" name="otra">${product.precio}</p></div><p>${product.descripcion}</p><div class="radio"><input type="radio"  name="talla${product.id}"><label>S</label><input type="radio" name="talla${product.id}"><label>M</label><input type="radio"  name="talla${product.id}" ><label>L</label> </div><button class="${product.id}"type="button" id="id${contador}" >Agregar al carrito <i class="bi bi-cart4"></i></button> </div>`;
+    contador++;
 });
 
 document.getElementById("container").innerHTML=html;
 var carrito=[];
-document.querySelector("#id").addEventListener("click", add);
-document.getElementById("id").addEventListener("click", add);
+let evento=document.querySelector("#id1")
+evento.addEventListener("click", add);
 function add(){
     let car;
-    car=productos.filter(product=>product.id==evento.className);
-    carrito.push(car);
+    car=productos.filter(product=>product.id===Number(evento.className));
+    carrito=[...car];
 
 }
+let evento2=document.querySelector("#id2")
+evento2.addEventListener("Click", add);
+function add(){
+    let car;
+    car=productos.filter(product=>product.id===Number(evento.className));
+    carrito=[...car];
 
+}
+/*let prueba=productos.filter(product=>product.id===2);
+let nuevo=[...prueba];
+console.log(nuevo[0].id)*/
 document.getElementById("cart1").innerHTML=carrito.length;
 
 
