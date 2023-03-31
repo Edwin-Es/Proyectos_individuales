@@ -4,6 +4,7 @@ body{
     margin:0;
     padding: 0;
     font-family: 'Laila', sans-serif;
+    position: relative;
 }
 
 nav>ul{
@@ -24,11 +25,13 @@ nav{
     border-bottom: 1px solid #000;
     height: 5rem;
     overflow: hidden;
+    z-index: 1;
 }
 
 
 .cart{
     position: relative;
+    z-index: 2;
 }
 #cart1{
     text-indent: 25%;
@@ -144,4 +147,14 @@ h1{
     opacity: 0.9;
 }
 
-
+#carrito{
+    background-color: #000;
+    position: absolute;
+    top: 3rem;
+    right: 13rem;
+    z-index: 5;
+    height: 20rem;
+    width: 25rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}

@@ -74,22 +74,24 @@ productos.forEach(product=>{
 let con=document.getElementById("container");
 con.insertAdjacentHTML("afterbegin",html)
 
-const carrito=[];
-let car;
+let carrito=[];
+
 document.getElementById("id1").onclick = function(){
-    car=productos.filter(product=>product.id===1);
-    carrito.push([...car]);
-    document.getElementById("cart1").innerHTML=carrito.length;
+    carrito.push(productos[0]);
+    document.getElementById("cart1").innerHTML=carrito[0].nombre;
 }
 document.getElementById("id2").onclick = function(){
-    car=productos.filter(product=>product.id===2);
-    carrito.push([...car]);
-    document.getElementById("cart1").innerHTML=carrito;
+    carrito.push(productos[1]);
+    document.getElementById("cart1").innerHTML=carrito[0].id;
 }
 
-document.getElementById("cart1").innerHTML=carrito.length;
+document.getElementById("cart1").innerHTML=carrito[0];
 
 
+let cart="";
+carrito.forEach(ver=>{
+    cart=cart+`<div class="producto"> <img src="${ver.img}"/><div class="precio"><p>${ver.nombre} </p><p id="precio" name="otra">${ver.precio}</p></div><p>${ver.descripcion}</p><div class="radio"><input type="radio"  name="talla${ver.id}"><label>S</label><input type="radio" name="talla${ver.id}"><label>M</label><input type="radio"  name="talla${ver.id}" ><label>L</label> </div><button "type="button" id="id${product.id}">Agregar al carrito <i class="bi bi-cart4"></i></button> </div>`;
+});
 
-
-
+let carri=document.getElementById("carrito");
+carri.insertAdjacentHTML("afterbegin",cart)
