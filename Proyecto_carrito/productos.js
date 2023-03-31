@@ -75,23 +75,23 @@ let con=document.getElementById("container");
 con.insertAdjacentHTML("afterbegin",html)
 
 let carrito=[];
-
+let cart="";
 document.getElementById("id1").onclick = function(){
     carrito.push(productos[0]);
-    document.getElementById("cart1").innerHTML=carrito[0].nombre;
+    cart=cart+`<div class="producto"> <img src="${carrito[0].img}"/><div class="precio"><p>${carrito[0].nombre} </p><p id="precio" name="otra">${carrito[0].precio}</p></div><p>${carrito[0].descripcion}</p><div class="radio"><input type="radio"  name="talla${carrito[0].id}"><label>S</label><input type="radio" name="talla${carrito[0].id}"><label>M</label><input type="radio"  name="talla${carrito[0].id}" ><label>L</label> </div><button "type="button" id="id${carrito[0].id}">Agregar al carrito <i class="bi bi-cart4"></i></button> </div>`;
+    document.getElementById("carrito").innerHTML=cart;
 }
 document.getElementById("id2").onclick = function(){
     carrito.push(productos[1]);
-    document.getElementById("cart1").innerHTML=carrito[0].id;
+    document.getElementById("cart1").innerHTML=carrito[1].id;
+    cart=cart+`<div class="producto"> <img src="${carrito[1].img}"/><div class="precio"><p>${carrito[1].nombre} </p><p id="precio" name="otra">${carrito[1].precio}</p></div><p>${carrito[1].descripcion}</p><div class="radio"><input type="radio"  name="talla${carrito[1].id}"><label>S</label><input type="radio" name="talla${carrito[1].id}"><label>M</label><input type="radio"  name="talla${carrito[1].id}" ><label>L</label> </div><button "type="button" id="id${carrito[1].id}">Agregar al carrito <i class="bi bi-cart4"></i></button> </div>`;
+    document.getElementById("carrito").innerHTML=cart;
 }
 
-document.getElementById("cart1").innerHTML=carrito[0];
-
-
-let cart="";
-carrito.forEach(ver=>{
+/*carrito.forEach(ver=>{
     cart=cart+`<div class="producto"> <img src="${ver.img}"/><div class="precio"><p>${ver.nombre} </p><p id="precio" name="otra">${ver.precio}</p></div><p>${ver.descripcion}</p><div class="radio"><input type="radio"  name="talla${ver.id}"><label>S</label><input type="radio" name="talla${ver.id}"><label>M</label><input type="radio"  name="talla${ver.id}" ><label>L</label> </div><button "type="button" id="id${product.id}">Agregar al carrito <i class="bi bi-cart4"></i></button> </div>`;
 });
 
 let carri=document.getElementById("carrito");
 carri.insertAdjacentHTML("afterbegin",cart)
+*/
