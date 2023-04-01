@@ -65,33 +65,44 @@ var productos=[
     },
 ]
 let html="";
-let contador=1;
+
 productos.forEach(product=>{
     html=html+`<div class="producto"> <img src="${product.img}"/><div class="precio"><p>${product.nombre} </p><p id="precio" name="otra">${product.precio}</p></div><p>${product.descripcion}</p><div class="radio"><input type="radio"  name="talla${product.id}"><label>S</label><input type="radio" name="talla${product.id}"><label>M</label><input type="radio"  name="talla${product.id}" ><label>L</label> </div><button "type="button" id="id${product.id}">Agregar al carrito <i class="bi bi-cart4"></i></button> </div>`;
-    contador++;
 });
 
 let con=document.getElementById("container");
-con.insertAdjacentHTML("afterbegin",html)
-
+con.insertAdjacentHTML("afterbegin",html);
+let count=0;
 let carrito=[];
 let cart="";
-document.getElementById("id1").onclick = function(){
-    carrito.push(productos[0]);
-    cart=cart+`<div class="producto"> <img src="${carrito[0].img}"/><div class="precio"><p>${carrito[0].nombre} </p><p id="precio" name="otra">${carrito[0].precio}</p></div><p>${carrito[0].descripcion}</p><div class="radio"><input type="radio"  name="talla${carrito[0].id}"><label>S</label><input type="radio" name="talla${carrito[0].id}"><label>M</label><input type="radio"  name="talla${carrito[0].id}" ><label>L</label> </div><button "type="button" id="id${carrito[0].id}">Agregar al carrito <i class="bi bi-cart4"></i></button> </div>`;
+document.getElementById("cart1").innerHTML=count;
+document.getElementById("id1").onclick = function(){addcart(0)}
+document.getElementById("id2").onclick = function(){addcart(1)}
+document.getElementById("id3").onclick = function(){addcart(2)}
+document.getElementById("id4").onclick = function(){addcart(3)}
+document.getElementById("id5").onclick = function(){addcart(4)}
+document.getElementById("id6").onclick = function(){addcart(5)}
+document.getElementById("id7").onclick = function(){addcart(6)}
+document.getElementById("id8").onclick = function(){addcart(7)}
+
+
+function addcart(num){
+    carrito.push(productos[num]);
+    cart=cart+`<div class="producto2"> <img src="${carrito[num].img}"/><div class="precio"><p>${carrito[num].nombre} </p><p id="precio" name="otra">${carrito[num].precio}</p></div><button type="button"><i class="bi bi-cart-x-fill"></i></button></div>`;
     document.getElementById("carrito").innerHTML=cart;
-}
-document.getElementById("id2").onclick = function(){
-    carrito.push(productos[1]);
-    document.getElementById("cart1").innerHTML=carrito[1].id;
-    cart=cart+`<div class="producto"> <img src="${carrito[1].img}"/><div class="precio"><p>${carrito[1].nombre} </p><p id="precio" name="otra">${carrito[1].precio}</p></div><p>${carrito[1].descripcion}</p><div class="radio"><input type="radio"  name="talla${carrito[1].id}"><label>S</label><input type="radio" name="talla${carrito[1].id}"><label>M</label><input type="radio"  name="talla${carrito[1].id}" ><label>L</label> </div><button "type="button" id="id${carrito[1].id}">Agregar al carrito <i class="bi bi-cart4"></i></button> </div>`;
-    document.getElementById("carrito").innerHTML=cart;
+    count+=1;
+    document.getElementById("cart1").innerHTML=count;
 }
 
-/*carrito.forEach(ver=>{
-    cart=cart+`<div class="producto"> <img src="${ver.img}"/><div class="precio"><p>${ver.nombre} </p><p id="precio" name="otra">${ver.precio}</p></div><p>${ver.descripcion}</p><div class="radio"><input type="radio"  name="talla${ver.id}"><label>S</label><input type="radio" name="talla${ver.id}"><label>M</label><input type="radio"  name="talla${ver.id}" ><label>L</label> </div><button "type="button" id="id${product.id}">Agregar al carrito <i class="bi bi-cart4"></i></button> </div>`;
-});
+document.getElementById("cart2").onclick=function(){ver()}
 
-let carri=document.getElementById("carrito");
-carri.insertAdjacentHTML("afterbegin",cart)
-*/
+function ver(){
+    let visible= document.getElementById("carrito").className
+    if(visible=="no-visible"){
+        document.getElementById("carrito").setAttribute("class","visible")
+    }
+    if(visible=="visible"){
+        document.getElementById("carrito").setAttribute("class","no-visible")
+    }
+}
+

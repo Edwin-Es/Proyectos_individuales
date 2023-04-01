@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
 
 body{
-    margin:0;
-    padding: 0;
+    margin-top:0;
+    padding-top: 0;
     font-family: 'Laila', sans-serif;
     position: relative;
 }
@@ -15,6 +15,15 @@ nav>ul{
     font-size: 1.5rem;
     margin:0;
     padding: 0.5rem
+}
+header{
+    margin-top:0;
+    padding:0;
+    position: fixed;
+    top:0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 10;
 }
 nav{
     position: relative;
@@ -45,6 +54,7 @@ nav{
     border-radius: 50%;
     top: -5px;
     right: -12px;
+    user-select: none; 
 }
 nav>img{
     position: absolute;
@@ -66,6 +76,7 @@ nav>ul>li:hover{
 }
 
 h1{
+    padding: 7rem 0 0 0;
     text-align: center;
     font-size: 2.5rem;
     font-weight: 700;
@@ -148,13 +159,65 @@ h1{
 }
 
 #carrito{
-    background-color: #000;
-    position: absolute;
-    top: 3rem;
+    border: 0.5px solid #b1aeae;
+    background-color: #fff;
+    position: fixed;
+    top: 4rem;
     right: 13rem;
-    z-index: 5;
-    height: 20rem;
-    width: 25rem;
+    z-index: 11;
+    height: auto;
+    max-height: 19rem;
+    width: 22rem;
     overflow-x: hidden;
     overflow-y: scroll;
+    transition-duration: 50ms;
+    transition-property: visibility;
+}
+
+.producto2{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    overflow: hidden;
+    justify-content: space-between;
+    align-content: flex-end;
+    border-bottom: 1px solid #b1aeae;
+}
+.producto2>img{
+    width: 3.5rem;
+    height: 4rem;
+    align-self: center;
+}
+
+.producto2>.precio>p{
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.producto2>.precio{
+    padding: 0;
+    margin:0;
+}
+
+.producto2>button {
+    background-color: transparent;
+    color: red;
+    padding: 0.5rem 0.5rem;
+    font-size: 2rem;
+    height: min-content;
+    border: none;
+    margin: 0;
+    align-self: center;
+}
+
+.visible{
+    visibility: visible;
+    transition: visibility 1s;
+}
+.no-visible{
+    visibility: hidden;
+
 }
