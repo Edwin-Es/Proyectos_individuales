@@ -76,23 +76,51 @@ let count=0;
 let carrito=[];
 let cart="";
 document.getElementById("cart1").innerHTML=count;
-document.getElementById("id1").onclick = function(){addcart(0)}
-document.getElementById("id2").onclick = function(){addcart(1)}
-document.getElementById("id3").onclick = function(){addcart(2)}
-document.getElementById("id4").onclick = function(){addcart(3)}
-document.getElementById("id5").onclick = function(){addcart(4)}
-document.getElementById("id6").onclick = function(){addcart(5)}
-document.getElementById("id7").onclick = function(){addcart(6)}
-document.getElementById("id8").onclick = function(){addcart(7)}
-
-
+document.getElementById("id1").onclick = function(){addcart(0); borrar()}
+document.getElementById("id2").onclick = function(){addcart(1); borrar()}
+document.getElementById("id3").onclick = function(){addcart(2); borrar()}
+document.getElementById("id4").onclick = function(){addcart(3); borrar()}
+document.getElementById("id5").onclick = function(){addcart(4); borrar()}
+document.getElementById("id6").onclick = function(){addcart(5); borrar()}
+document.getElementById("id7").onclick = function(){addcart(6); borrar()}
+document.getElementById("id8").onclick = function(){addcart(7); borrar()}
+let i=0;
 function addcart(num){
+    cart="";
+    i=0;
+    
     carrito.push(productos[num]);
-    cart=cart+`<div class="producto2"> <img src="${carrito[num].img}"/><div class="precio"><p>${carrito[num].nombre} </p><p id="precio" name="otra">${carrito[num].precio}</p></div><button type="button"><i class="bi bi-cart-x-fill"></i></button></div>`;
+    carrito.forEach(carro=>{
+        cart=cart +`<div class="producto2"> <img src="${carro.img}"/><div class="precio"><p>${carro.nombre} </p><p id="precio" name="otra">${carro.precio}</p></div><button type="button" id="${i}"><i class="bi bi-cart-x-fill"></i></button></div>`;
+        i++;   
+    })
+    
     document.getElementById("carrito").innerHTML=cart;
     count+=1;
     document.getElementById("cart1").innerHTML=count;
 }
+
+    
+function borrar(){
+    let ids=carrito.length;
+    carrito.forEach(comprobar=>{
+    for(let j=0;j<ids;j++){
+    document.getElementById(`${j}`).onclick=function(){
+        var indice = j; // obtenemos el indice
+        carrito.splice(indice, 1); // 1 es la cantidad de elemento a eliminar
+        cart="";
+        i=0;
+        carrito.forEach(carro=>{
+            cart=cart +`<div class="producto2"> <img src="${carro.img}"/><div class="precio"><p>${carro.nombre} </p><p id="precio" name="otra">${carro.precio}</p></div><button type="button" id="${i}"><i class="bi bi-cart-x-fill"></i></button></div>`;
+            i++;
+        })
+        document.getElementById("carrito").innerHTML=cart;
+        count-=1;
+        document.getElementById("cart1").innerHTML=count;
+        borrar();
+    }
+}  })}
+
 
 document.getElementById("cart2").onclick=function(){ver()}
 
@@ -105,4 +133,5 @@ function ver(){
         document.getElementById("carrito").setAttribute("class","no-visible")
     }
 }
+
 
