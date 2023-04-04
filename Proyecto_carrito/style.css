@@ -206,7 +206,7 @@ h1{
 .producto2>button {
     cursor: pointer;
     background-color: transparent;
-    color: red;
+    color: rgb(228, 6, 17);
     padding: 0.5rem 0.5rem;
     font-size: 2rem;
     height: min-content;
@@ -221,5 +221,24 @@ h1{
 }
 .no-visible{
     visibility: hidden;
+
+}
+
+#total{
+    position: relative;
+    font-weight: 800;
+    font-size: 1rem;
+    padding-right: 1rem;
+    text-align: end;
+    
+}
+
+#total::before{
+    content: "";
+    position: absolute;
+    border-top: 3px solid rgb(143, 44, 49);
+    top:-5px;
+    right: 15px;
+    width: 10rem;
 
 }
