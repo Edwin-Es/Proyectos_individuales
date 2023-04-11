@@ -1,0 +1,57 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap');
+body{
+    font-family: 'Chakra Petch', sans-serif;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100vw;
+    height: 60vh;
+    background-image: url(bg.jpg) ;
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+.container{
+    position: relative;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:50%;
+    height: 50%;
+    background: rgb(19,158,70);
+background: linear-gradient(90deg, rgba(19,158,70,0.7511379551820728) 2%, rgba(83,117,96,0.804359243697479) 21%, rgba(118,122,124,0.8463760504201681) 50%, rgba(101,139,117,0.8547794117647058) 72%, rgba(19,159,77,0.8799894957983193) 89%);
+    padding: 2rem;
+
+}
+
+#hora{
+    margin: 0;
+    padding: 0;
+    font-size: 5rem;
+
+}
+#fecha{
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+.fecha{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+.fecha>img{
+    width: 10rem;
+    height: 2rem;
+}
+.hora>p{
+    display: inline;
+}
+#amorpm{
+    font-size: 2rem;
+}
+
