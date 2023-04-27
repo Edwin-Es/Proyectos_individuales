@@ -74,6 +74,18 @@ function orden(){
     }
     return nuevoorden;
 }
+//ordenrespuestas
+function orden2(){
+    let nuevoorden=[];
+    for(let i=0;i<3;i++){
+        let nuevo=Math.round(Math.random()*2)
+        if(!nuevoorden.includes(nuevo)){
+            nuevoorden.push(nuevo)
+        }
+        else i--;
+    }
+    return nuevoorden;
+}
 
 let displaypreguntas="";
 
@@ -89,12 +101,16 @@ function ordenar(){
     ordenamiento.forEach(ordenare =>{
     displaypreguntas2+=`<div id="p${counter}">
         <h3>${counter} - ${ordenare.pregunta}</h3>
-        <div>
-        <p id="seleccion" class="none">${ordenare.opc_correcta}</p>
-        <p id="seleccion" class="none">${ordenare.opc_mal1}</p>
-        <p id="seleccion" class="none">${ordenare.opc_mal2}</p>
-        </div>
+        <div>`
+    let otroorden=orden2();
+    otroorden.forEach(element=>{
+        if(element==0) displaypreguntas2+=`<p id="seleccion" class="none">${ordenare.opc_correcta}</p>`;
+        else if (element==1) displaypreguntas2+=`<p id="seleccion" class="none">${ordenare.opc_mal1}</p>`;
+        else if (element==2) displaypreguntas2+=`<p id="seleccion" class="none">${ordenare.opc_mal2}</p>`;
+    })    
+    displaypreguntas2+=`</div>
     </div>`
+        
     counter++;
     }
 )
@@ -137,29 +153,46 @@ comenzar.addEventListener("click",()=>{
         seccionpreguntas.style.display="none";
         seccionfinal.style.display="flex";
         seccionpreguntas.scrollTo(x=0,y=0);
+         //verificacion
+        let buenas=0;
+       seleccion.forEach(element=>{
+            if(element.className=="seleccion"){
+            for(let i=0;i<preguntas.length;i++)
+            {
+                if(element.textContent==preguntas[i].opc_correcta){
+                    buenas++;
+                }
+            }
+            }
+        })
+        
+        if(buenas>=7) {resultado.textContent="Felicidades!"; resultado.style.color="#12ED19";}
+        else {resultado.textContent="Opps! Vuelve a intentar"; resultado.style.color="red"}
+        buenasomalas.textContent=`${buenas}/${preguntas.length}`
+        promedio.textContent="Su promedio es:" + ((buenas/preguntas.length).toFixed(2))*10;
     })
 
     seleccion.forEach(element=>element.addEventListener("click",(event)=>{
         let eventtarget=event.target;
+        
         //Seleccion de respuesta
             if(!eventtarget.className==""||!eventtarget.className=="noseleccion"||eventtarget.className=="none"){
             eventtarget.className="seleccion";
             }
-            if(eventtarget.previousSibling.previousSibling==null){
-            let final=eventtarget.nextSibling.nextSibling;
+            if(eventtarget.previousSibling==null){
+            let final=eventtarget.nextSibling;
             final.className="noseleccion";
-            final.nextSibling.nextSibling.className="noseleccion";
+            final.nextSibling.className="noseleccion";
             }
-            else if(eventtarget.nextSibling.nextSibling==null){
-            let final=eventtarget.previousSibling.previousSibling;
+            else if(eventtarget.nextSibling==null){
+            let final=eventtarget.previousSibling;
             final.className="noseleccion";
-            final.previousSibling.previousSibling.className="noseleccion";
+            final.previousSibling.className="noseleccion";
             }
             else{
-            eventtarget.nextSibling.nextSibling.className="noseleccion";
-            eventtarget.previousSibling.previousSibling.className="noseleccion";
+            eventtarget.nextSibling.className="noseleccion";
+            eventtarget.previousSibling.className="noseleccion";
             }
-        //verificacion
     }))
     
 })
@@ -177,6 +210,56 @@ reiniciar.addEventListener("click",()=>{
     displaypreguntas+=ordenar();
     seccionpreguntas.insertAdjacentHTML("afterbegin",displaypreguntas);
     seccionpreguntas.scrollTo(x=0,y=0);
+
+        //agregar variables para el html
+        const enviar=document.querySelector("#enviar");
+        const seleccion=document.querySelectorAll("#seleccion")
+
+    enviar.addEventListener("click",()=>{
+        seccionpreguntas.style.display="none";
+        seccionfinal.style.display="flex";
+        seccionpreguntas.scrollTo(x=0,y=0);
+         //verificacion
+        let buenas=0;
+       seleccion.forEach(element=>{
+            if(element.className=="seleccion"){
+            for(let i=0;i<preguntas.length;i++)
+            {
+                if(element.textContent==preguntas[i].opc_correcta){
+                    buenas++;
+                }
+            }
+            }
+        })
+        
+        if(buenas>=7) {resultado.textContent="Felicidades!"; resultado.style.color="#12ED19";}
+        else {resultado.textContent="Opps! Vuelve a intentar"; resultado.style.color="red"}
+        buenasomalas.textContent=`${buenas}/${preguntas.length}`
+        promedio.textContent="Su promedio es:" + ((buenas/preguntas.length).toFixed(2))*10;
+    })
+
+    seleccion.forEach(element=>element.addEventListener("click",(event)=>{
+        let eventtarget=event.target;
+        
+        //Seleccion de respuesta
+            if(!eventtarget.className==""||!eventtarget.className=="noseleccion"||eventtarget.className=="none"){
+            eventtarget.className="seleccion";
+            }
+            if(eventtarget.previousSibling==null){
+            let final=eventtarget.nextSibling;
+            final.className="noseleccion";
+            final.nextSibling.className="noseleccion";
+            }
+            else if(eventtarget.nextSibling==null){
+            let final=eventtarget.previousSibling;
+            final.className="noseleccion";
+            final.previousSibling.className="noseleccion";
+            }
+            else{
+            eventtarget.nextSibling.className="noseleccion";
+            eventtarget.previousSibling.className="noseleccion";
+            }
+    }))
 })
 
 salir.addEventListener("click",()=>{
