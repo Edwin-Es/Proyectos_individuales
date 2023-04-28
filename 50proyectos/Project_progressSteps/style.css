@@ -1,0 +1,90 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#progress{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 400px;
+    height: auto;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.steps{
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    color: rgb(105, 105, 105);
+    border: 3px solid #a6a6a7;
+    background-color: #ffffff;
+    transition: border linear 300ms;
+}
+
+.btn{
+    font-weight: 500;
+    padding: 0.7rem 1rem;
+    width: 6rem;
+    color: #ffffff;
+    background-color: #337ae4;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform linear 500ms;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+    justify-content: center;
+}
+
+.btn:disabled{
+    background-color: #cecece;
+}
+.active{
+    border: 3px solid #337ae4;
+}
+.btn:hover{
+    opacity: 0.9;
+}
+
+.btn:active{
+    transform: scale(1.1);
+}
+
+#progressBar{
+    z-index: 5;
+    height: 3px;
+    background-color: #337ae4;
+    position: absolute;
+    top:50%;
+    bottom:50%;
+    transition: width linear 300ms;
+}
+.progressBarholder{
+    z-index: 3;
+    height: 3px;
+    background-color: #a6a6a7;
+    position: absolute;
+    top:50%;
+    bottom:50%;
+    
+}

@@ -1,0 +1,40 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    gap:1.5rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.img{
+    background-color: aqua;
+    position: relative;
+    width: 6rem;
+    height: 80%;
+    border-radius: 50px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: width cubic-bezier(0.41, -0.35, 0.61, 1.24) 900ms;
+
+}
+
+.seleccion{
+    width: 46rem;
+}
+
+.img h3{
+    position: absolute;
+    bottom: 1rem;
+    left: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(242, 243, 243);
+    transition: visibility ease-in 100ms;
+}
