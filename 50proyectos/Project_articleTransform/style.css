@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap');
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Jost', sans-serif;
+}
+
+.container{
+    background-color: #222222;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.content{
+    z-index: 5;
+    width: 100%;
+    padding: 4rem 11rem;
+    align-items: center;
+    background-color: #ffffff;
+    transition: transform linear 500ms;
+}
+
+.content img{
+    width: 100%;
+}
+.content h1{
+    margin-bottom: 0;
+    font-size: 2.1rem;
+    color: rgb(46, 46, 46);
+}
+.content p{
+    color: rgb(46, 46, 46);
+    font-size: 1.05rem;
+}
+.content small{
+    margin-top: 0;
+    font-style: italic;
+    color: rgb(75, 74, 74);
+}
+
+.menu{
+    z-index: 10;
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    left: -100px;
+    top:-100px;
+    border-radius: 50%;
+    background-color: #ff7979;
+}
+
+.list{
+    position: absolute;
+    color:#ffffff;
+    transition: transform linear 500ms;
+    cursor: pointer;
+    transform: translate(125px,125px);
+}
+.close{
+    position: absolute;
+    color:#ffffff;
+    transition: transform linear 500ms;
+    cursor: pointer;
+    transform: translate(0,200px) rotate(50deg);
+}
+
+.opciones{
+    width: max-content;
+    color:#ffffff;
+    list-style: none;
+    font-size: 1.1rem;
+    font-weight: 800;
+    transform: translate(-100px, 450px);
+}
+.opciones li{
+    margin: 2rem;
+    transition: transform ease-in 700ms;
+}

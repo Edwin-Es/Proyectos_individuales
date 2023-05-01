@@ -1,0 +1,43 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(28, 192, 137);
+    width: 100%;
+    height: 100vh;
+}
+
+.search{
+    height: 100%;
+    visibility: hidden;
+    width: 0px;
+    transition: width linear 300ms;
+    border:none;
+    font-size: 1.1rem;
+}
+.btn{
+    height: 100%;
+    padding:5px;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    border:none;
+}
+.buscar{
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    height: 45px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.search:focus{
+    outline: none;
+}
