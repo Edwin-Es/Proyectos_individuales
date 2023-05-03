@@ -1,0 +1,69 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+.left{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    background-color: rgba(87, 84, 236, 0.7);
+    background-image: url("https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt054c12973dc65d3e/60db71928491e60f790b1b87/f61138da5e0a3af7c7c83b6166f1cb03dbfee30f.jpg?auto=webp&format=pjpg&width=3840&quality=60");
+    background-position: center;
+    background-size: cover;
+    transition: width ease-out 800ms;
+    cursor: pointer;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    background-image: url("https://assets.xboxservices.com/assets/1d/96/1d96b409-c293-43f1-ab53-dd1a0dc5d101.jpg?n=XSX_Content-Placement-0_XSX-Forza-Horizon-5_788x444.jpg");
+    background-position: center;
+    background-size: cover;
+    transition: width ease-out 800ms;
+    cursor: pointer;
+}
+
+.btn{
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border:3px solid #ffffff;
+    color:#ffffff;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: hover linear 300ms;
+    z-index:2;
+}
+
+.left>.btn:hover{
+    background-color: rgba(87, 84, 236, 1);
+    border-color: rgba(87, 84, 236, 1);
+}
+.right>.btn:hover{
+    background-color:rgba(28, 122, 28, 1);
+    border-color:rgba(28, 122, 28, 1) ;
+}
+h2{
+    margin-bottom: 0.5rem;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    z-index:2;
+}
