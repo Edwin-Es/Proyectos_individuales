@@ -14,9 +14,12 @@ const next=document.querySelector(".btn")
 let counter=0;
 imageselector();
 function imageselector(){
-    console.log("aca")
     if(counter<images.length && counter>=0){
     body.style.backgroundImage=`url("${images[counter]}")`}
+    else if(counter<0){
+        counter=images.length-1;
+        body.style.backgroundImage=`url("${images[counter]}")`
+    }
     else {
         counter=0;
         body.style.backgroundImage=`url("${images[counter]}")`
