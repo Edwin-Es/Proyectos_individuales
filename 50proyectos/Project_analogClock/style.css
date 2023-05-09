@@ -1,0 +1,124 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+    gap: 1rem;
+    box-sizing: border-box;
+    transition: all ease 500ms;
+}
+
+
+.theme{
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #000;
+    color: #ffffff;
+}
+.clock{
+    width: 250px;
+    height: 250px;
+    box-shadow: 0px 0px 15px 3px #0000008a;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #0000001e;
+}
+
+.pinsec{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: brown;
+    z-index: 6;
+}
+.pinsec::before{
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 110px;
+    background-color: brown;
+    bottom:0;
+    left: 3px;
+    z-index: 5;
+}
+
+.pinmin{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #000;
+    z-index: 1;
+}
+.pinmin::before{
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 100px;
+    background-color: #000;
+    bottom:0;
+    left: 3px;
+    z-index: 1;
+}
+
+.pinhour{
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #000;
+    z-index: 5; 
+}
+.pinhour::before{
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 70px;
+    background-color: #000;
+    bottom:0;
+    left: 0;
+    z-index: 1;
+}
+.hours{
+    font-size: 4rem;
+    font-weight: 100;
+}
+
+.date{
+    font-size: 1.1rem;
+    color: darkgray;
+    text-transform: uppercase;
+}
+
+.date span{
+    padding: 0 0.3rem;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.darktheme{
+    background-color: #000000;
+}
+.darkthem span :first-child{
+    background-color: brown;
+}
+.dark{
+    color:#ffffff;
+}
+.newtheme{
+    background-color: #ffffff;
+    color: #000;
+}

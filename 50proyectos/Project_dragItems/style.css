@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: #00444d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.content{
+    border: 4px solid #000;
+    background-color: antiquewhite;
+    width: 200px;
+    height: 200px;
+}
+
+.item{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(27, 75, 12);
+}
+
+.dragging{
+    opacity: 0.8;
+}
+
+.hold{
+    opacity: 0.8;
+    border: 4px dashed #000;
+}
