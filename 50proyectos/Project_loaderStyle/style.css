@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #00444d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.triangle,.triangle2{
+    align-self: center;
+    position: absolute;
+    width: 5px;
+    border-radius: 50%;
+    height: 5px;
+    background-color: #dddddd;
+    transition: all 500ms ease;
+}
+
+.triangle:before{
+    content: "";
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 60px solid #dddddd;
+    left: -59px;
+}
+.triangle2::before{
+    content: "";
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-top: 60px solid #dddddd;
+    left: -57px;
+    top: -56px;
+    
+}
