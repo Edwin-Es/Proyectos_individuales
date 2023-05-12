@@ -1,0 +1,84 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family:monospace;
+}
+
+nav{
+    width: 100%;
+    background-color: #222222;
+    position: fixed;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    transition: all 500ms ease;
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+nav a:hover{
+    color: #b10a0a;
+    transition: all 450ms ease;
+}
+nav a:nth-child(2){
+    color: #b10a0a;
+}
+nav a:first-child{
+    font-size: 1.8rem;
+    font-weight: 800;
+    flex: 2;
+    margin-left:6rem;;
+}
+
+nav a:last-child{
+    margin-right: 6rem;
+}
+
+.title{
+    background-image: url("https://www.namesnack.com/images/namesnack-vintage-business-names-4605x3454-20200918.jpeg?crop=4:3,smart&width=1200&dpr=2");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: calc(100vh);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.title p{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 0;
+}
+.title h1{
+    font-size: 3rem;
+    text-align: center;
+    margin: -10px 0 0;
+}
+
+section{
+    padding:1rem 4rem;
+    box-sizing: border-box;
+    font-size: 1.3rem;
+    color: #616161;
+}
+
+section h2{
+    color:#000;
+}
+
+.content{
+    background-color: #ffffff;
+}
+.content a{
+    color: #000;
+    font-weight: 600;
+}

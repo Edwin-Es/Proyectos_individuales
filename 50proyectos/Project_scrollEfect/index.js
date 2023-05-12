@@ -20,7 +20,6 @@ let currentContent=1;
 function mover(){
     if(window.scrollY>avance && window.scrollY<avance*(content.length+4)){
         let coord=content[currentContent].getBoundingClientRect()
-        console.log(coord.top)
         if(currentContent<content.length){
             if(coord.top<=180&&currentContent<=(content.length-3)){
             currentContent++
