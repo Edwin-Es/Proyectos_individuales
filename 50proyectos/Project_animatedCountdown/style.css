@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #00443d;
+}
+
+button{
+    font-size: 1.5rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+h3{
+    color: #fff;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.countdown p{
+    display: none;
+    color: #f35a01;
+    font-size: 4rem;
+    text-align: center;
+    margin: 0;
+    transform: rotateZ(90deg) translateX(75px) translateY(-75px);
+}
+.countdown div{
+    overflow: hidden;
+    
+}
+
+.countdown{
+    display: none;
+}
+
+@keyframes count {
+    0%{
+        transform: rotateZ(90deg) translateX(75px) translateY(-75px)
+    }
+    50%{
+        transform: rotateZ(0) translateX(0) translateY(0)
+    }
+    100%{
+        transform: rotateZ(-90deg) translateX(-75px) translateY(-75px)
+    }
+}
