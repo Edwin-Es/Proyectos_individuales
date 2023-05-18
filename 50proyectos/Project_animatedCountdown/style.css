@@ -31,7 +31,7 @@ h3{
     font-size: 4rem;
     text-align: center;
     margin: 0;
-    transform: rotateZ(90deg) translateX(75px) translateY(-75px);
+    transform: rotateZ(90deg) translateX(50px) translateY(-25px);
 }
 .countdown div{
     overflow: hidden;
@@ -44,12 +44,12 @@ h3{
 
 @keyframes count {
     0%{
-        transform: rotateZ(90deg) translateX(75px) translateY(-75px)
+        transform: rotateZ(90deg) translateX(50px) translateY(-25px)
     }
     50%{
         transform: rotateZ(0) translateX(0) translateY(0)
     }
     100%{
-        transform: rotateZ(-90deg) translateX(-75px) translateY(-75px)
+        transform: rotateZ(-90deg) translateX(-50px) translateY(-25px)
     }
 }
